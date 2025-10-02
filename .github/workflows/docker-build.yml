@@ -23,4 +23,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/f1-results-app:latest
+        tags: ${agr4y}/f1-results-app:latest
