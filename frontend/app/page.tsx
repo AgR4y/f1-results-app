@@ -11,15 +11,17 @@ export default function Home() {
   const [year, setYear] = useState("2024");
 
   useEffect(() => {
-    fetch(`http://f1-results-app.onrender.com/results/${year}`)
-      .then(res => res.json())
-      .then(data => setResults(data));
+    // Render上のバックエンドURLに変更
+    fetch(`https://f1-results-app.onrender.com/results/${year}`)
+      .then((res) => res.json())
+      .then((data) => setResults(data))
+      .catch((err) => console.error("API fetch failed:", err));
   }, [year]);
 
   return (
     <main style={{ padding: "20px" }}>
       <h1>F1 Results {year}</h1>
-      <select value={year} onChange={e => setYear(e.target.value)}>
+      <select value={year} onChange={(e) => setYear(e.target.value)}>
         <option value="2024">2024</option>
         <option value="2023">2023</option>
         <option value="2022">2022</option>
