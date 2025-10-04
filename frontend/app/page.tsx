@@ -12,7 +12,7 @@ export default function Home() {
 
   useEffect(() => {
     // Render上のバックエンドURLに変更
-    fetch(`https://f1-results-app.onrender.com/results/${year}`)
+    fetch(`https://f1-results-app-gmbr.onrender.com/results/${year}`)
       .then((res) => res.json())
       .then((data) => setResults(data))
       .catch((err) => console.error("API fetch failed:", err));
